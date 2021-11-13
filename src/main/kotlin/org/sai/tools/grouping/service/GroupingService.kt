@@ -87,7 +87,7 @@ class GroupingService(private val memberRepository: MemberRepository) {
 
         return GroupOutput(
             distinctValues.size,
-            groups.size + ungroupedValues.size,
+            groups.size + ungroupedValues.size - 1,
             ungroupedValues,
             groups.map { it.sorted().toSortedSet() },
             comparisons = entryComparisons

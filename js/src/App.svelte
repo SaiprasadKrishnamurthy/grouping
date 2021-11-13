@@ -96,8 +96,32 @@ A,B,P,J,M,Y
       <tbody>
       {#each result.entries as group, i}
         <tr>
-          <th scope="row">Group-{i}</th>
-          <td>{group}</td>
+          <th scope="row">Group_{i}</th>
+          <th scope="row">{group}</th>
+        </tr>
+        {/each}
+      </tbody>
+    </Table>
+  </CardBody>
+</Card>
+<hr />
+<Card class="mb-3">
+  <CardHeader>
+    <CardTitle>Original vs Grouped</CardTitle>
+  </CardHeader>
+  <CardBody>
+    <Table hover bordered>
+      <tbody>
+      <tr>
+         <td>Original</td>
+         <td>Grouped</td>
+         <td>Reduced terms count</td>
+      </tr>
+      {#each result.comparisons as c}
+        <tr>
+          <th scope="row">{c.original}</th>
+          <th scope="row">{c.grouped}</th>
+          <th scope="row">{c.termsReducedCount}</th>
         </tr>
         {/each}
       </tbody>
@@ -114,7 +138,7 @@ A,B,P,J,M,Y
       <tbody>
       {#each result.ungrouped as ungroup}
         <tr>
-          <td>{ungroup}</td>
+          <th scope="row">{ungroup}</th>
         </tr>
         {/each}
       </tbody>
